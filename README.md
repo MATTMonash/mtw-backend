@@ -5,7 +5,8 @@
 - (In Progess): The **LangGraph/LangChain Agentic Pipeline** is tailored to respond to queries.
 
 ---
-## Development Setup
+
+## 🛠️ Development Setup
 Prior to starting development, its a good idea to setup your virtual environment.
 This will be managed using `uv`, first install this package manager so you can use the CLI commands.
 
@@ -25,5 +26,41 @@ If you're developing on VSCode please also apply this virtual environment's Pyth
 2. Begin by typing "Python select interpreter" and select the command from the dropdown list.
 3. Choose the virtual environments interpreter "Python 3.x.x (mtw-backend)". 
 4. Now you're all good to go!
+
+### Ruff extension for VS Code (optional but really helpful)
+For real-time linting feedback, install the Ruff extension:
+1. Open Extensions (`Ctrl + Shift + X` or `Cmd + Shift + X`)
+2. Search for "Ruff" by Astral Software
+3. Click Install
+
+The extension will automatically use the project's ruff configuration and highlight issues as you code.
+
 ---
 
+## 🔍 Pre-commit Hook Setup
+Prior to committing code, it's essential to ensure code quality and consistency. This project uses `ruff` for linting and formatting, automated through pre-commit hooks.
+
+### Installing pre-commit
+First, install the pre-commit package using `uv` (since you already have it set up).
+
+```bash
+uv pip install pre-commit
+```
+### Configuring the hooks
+The project already inclues a `.pre-commit-config.yaml` file with ruff configured. To activate the hooks in your local repository:
+```
+pre-commit install
+```
+### How it works
+After installation, every `git commit` will automatically:
+- Check your code for errors and style violations
+- Auto-fix issues where possible
+- Format your code consistently
+- Block the commit if critical issues need manual fixing
+### Testing the setup (optional)
+To verify everything is working correctly, run the hooks manually on all files:
+```bash
+pre-commit run --all-files
+```
+
+---
