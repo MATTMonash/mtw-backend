@@ -3,6 +3,9 @@ venv/
 .venv/
 env/
 
+# Secrets env file
+.env
+
 # Python cache files
 __pycache__/
 
