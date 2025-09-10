@@ -40,12 +40,6 @@ The extension will automatically use the project's ruff configuration and highli
 ## 🔍 Pre-commit Hook Setup
 Prior to committing code, it's essential to ensure code quality and consistency. This project uses `ruff` for linting and formatting, automated through pre-commit hooks.
 
-### Installing pre-commit
-First, install the pre-commit package using `uv` (since you already have it set up).
-
-```bash
-uv pip install pre-commit
-```
 ### Configuring the hooks
 The project already inclues a `.pre-commit-config.yaml` file with ruff configured. To activate the hooks in your local repository:
 ```
