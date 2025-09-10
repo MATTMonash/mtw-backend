@@ -27,6 +27,10 @@ If you're developing on VSCode please also apply this virtual environment's Pyth
 3. Choose the virtual environments interpreter "Python 3.x.x (mtw-backend)". 
 4. Now you're all good to go!
 
+### Environment variables setup
+1. Take a look at the `.env.template` file, those are the env variables you'll need.
+2. Create a duplicate of the `.env.template` file and rename it to `.env`, set the environment variables.
+
 ### Ruff extension for VS Code (optional but really helpful)
 For real-time linting feedback, install the Ruff extension:
 1. Open Extensions (`Ctrl + Shift + X` or `Cmd + Shift + X`)
