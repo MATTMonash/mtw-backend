@@ -5,6 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.v1 import api_v1_router
 from app.config import settings
+from app.llms.manager import llm_manager
 
 
 @asynccontextmanager
@@ -12,6 +13,12 @@ async def lifespan(app: FastAPI):
     """Application lifespan events (startup and shutdown)"""
     # Startup
     print(f"[Info] Starting up server in {settings.environment} mode...")
+
+    # Validate and initialise LLMs (importing initialises the LLMs)
+    if not llm_manager._models:
+        print("[WARN] No LLM models available")
+    else:
+        print(f"[Success] LLM models available: {list(llm_manager._models.keys())}")
 
     yield
 
