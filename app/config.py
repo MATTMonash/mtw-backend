@@ -13,12 +13,23 @@ class Environment(str, Enum):
     PRODUCTION = "production"
 
 
+class LogLevel(str, Enum):
+    DEBUG = "DEBUG"
+    INFO = "INFO"
+    WARNING = "WARNING"
+    ERROR = "ERROR"
+    CRITICAL = "CRITICAL"
+
+
 class Settings(BaseSettings):
     environment: Environment = Environment.DEVELOPMENT
 
     google_api_key: str | None = None
 
     cors_origins: list[str] = ["*"]
+
+    # Logging configuration
+    log_level: LogLevel = LogLevel.INFO
 
     class Config:
         env_file = ".env"
