@@ -3,9 +3,8 @@ from typing import Any
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_ollama import ChatOllama
 
-from app.llms.local_llms import get_local_ollama_models
-
 from app.config import settings
+from app.llms.local_llms import get_local_ollama_models
 
 
 class LLMManager:
@@ -31,11 +30,7 @@ class LLMManager:
         # Local Ollama LLMs
         local_models = get_local_ollama_models()
         for local_model in local_models:
-            self._models[local_model] = ChatOllama(
-                model=local_model,
-                temperature=0
-            )
-
+            self._models[local_model] = ChatOllama(model=local_model, temperature=0)
 
     def get_llm(self, model_name: str | None = None):
         """Get LLM by name or return default"""

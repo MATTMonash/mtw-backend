@@ -1,12 +1,11 @@
 """
-
 Retrieves a list of locally installed LLMs
-
 """
 
 import requests
 
 OLLAMA_API_URL = "http://localhost:11434/api/tags"
+
 
 def get_local_ollama_models() -> list[str]:
     """
@@ -24,6 +23,7 @@ def get_local_ollama_models() -> list[str]:
     except requests.exceptions.RequestException as e:
         print(f"Could not fetch locally installed Ollama models: {e}")
         return []
+
 
 if __name__ == "__main__":
     models = get_local_ollama_models()
