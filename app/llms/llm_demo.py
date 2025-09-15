@@ -29,7 +29,6 @@ llm = ChatOllama(
 prompt = ChatPromptTemplate.from_template(template=template)
 chain = prompt | llm
 
-
 def start_chat():
     context = ""
     print("Emoji ChatBot! Type 'exit' to quit.")
@@ -46,7 +45,6 @@ def start_chat():
             print(chunk.content, end="", flush=True)
         print("")
         context += f"\nUser: {user_input}\nAssistant: {''.join(chunks)}"
-
 
 if __name__ == "__main__":
     start_chat()
