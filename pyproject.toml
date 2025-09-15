@@ -9,6 +9,7 @@ dependencies = [
     "fastapi>=0.116.1",
     "langchain>=0.3.27",
     "langchain-google-genai>=2.1.10",
+    "langchain-ollama>=0.3.8",
     "langgraph>=0.6.7",
     "pre-commit>=4.3.0",
     "pydantic>=2.11.7",

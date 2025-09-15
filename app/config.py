@@ -28,6 +28,8 @@ class Settings(BaseSettings):
 
     cors_origins: list[str] = ["*"]
 
+    ollama_api_url: str = "http://localhost:11434/api/tags"
+
     # Logging configuration
     log_level: LogLevel = LogLevel.INFO
 
