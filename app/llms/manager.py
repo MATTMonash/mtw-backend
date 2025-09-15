@@ -4,7 +4,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_ollama import ChatOllama
 
 from app.config import settings
-from app.llms.local_llms import get_local_ollama_models
+from app.llms.local import get_local_ollama_models
 
 
 class LLMManager:

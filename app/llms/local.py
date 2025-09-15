@@ -4,7 +4,9 @@ Retrieves a list of locally installed LLMs
 
 import requests
 
-OLLAMA_API_URL = "http://localhost:11434/api/tags"
+from app.config import settings
+
+OLLAMA_API_URL = settings.ollama_api_url
 
 
 def get_local_ollama_models() -> list[str]:
@@ -25,11 +27,11 @@ def get_local_ollama_models() -> list[str]:
         return []
 
 
-if __name__ == "__main__":
-    models = get_local_ollama_models()
-    if models:
-        print("Available Ollama models:")
-        for model in models:
-            print(f"- {model}")
-    else:
-        print("No models could be found (or Ollama is not running).")
+# if __name__ == "__main__":
+#     models = get_local_ollama_models()
+#     if models:
+#         print("Available Ollama models:")
+#         for model in models:
+#             print(f"- {model}")
+#     else:
+#         print("No models could be found (or Ollama is not running).")
