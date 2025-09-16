@@ -12,7 +12,7 @@ def create_main_graph():
     # Add nodes
     graph.add_node("emoji_generator", emoji_generator_node)
 
-    # END -> emoji_generator -> END
+    # START -> emoji_generator -> END
     graph.add_edge(START, "emoji_generator")
     graph.add_edge("emoji_generator", END)
 
