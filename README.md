@@ -41,6 +41,12 @@ For real-time linting feedback, install the Ruff extension:
 
 The extension will automatically use the project's ruff configuration and highlight issues as you code.
 
+### Actually running the server!
+To run the server you need to open a terminal and first make sure that you have your virtual environment setup.
+1. Apply virtual environment. In your terminal write `.venv/scripts/activate` (Windows) 
+or `source .venv/scripts/activate` (macOS)
+2. Run the server with `uvicorn app.main:app`, or you can do `uvicorn app.main:app --reload` for hot reloading whilst you code.
+
 </details>
 
 <details>
