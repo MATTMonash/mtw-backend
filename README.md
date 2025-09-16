@@ -6,6 +6,8 @@
 
 ---
 
+## Setup
+
 <details>
 <summary><strong>🛠️ Development Environment Setup</strong></summary>
 
@@ -50,21 +52,36 @@ or `source .venv/scripts/activate` (macOS)
 </details>
 
 <details>
-<summary><strong>🔍 Pre-commit Hook Setup</strong></summary>
+<summary><strong>🔍 Pre-commit Hook Setup</strong> (please set this up before making commits)</summary>
 
-Prior to committing code, it's essential to ensure code quality and consistency. This project uses `ruff` for linting and formatting, automated through pre-commit hooks.
+Prior to committing code, it's essential to ensure code quality, security, and consistency. This project uses multiple pre-commit hooks to maintain high standards.
 
 ### Configuring the hooks
-The project already inclues a `.pre-commit-config.yaml` file with ruff configured. To activate the hooks in your local repository:
-```
+The project includes a `.pre-commit-config.yaml` file with comprehensive quality checks. To activate the hooks in your local repository:
+```bash
 pre-commit install
 ```
+
+### What the hooks check
+After installation, every `git commit` will automatically run:
+
+**Code Quality & Formatting:**
+- **Ruff** - Python linting and auto-formatting for consistent code style
+
+**Security:**
+- **Bandit** - Scans Python code for common security vulnerabilities and issues
+- **Detect Private Key** - Prevents accidental commits of SSH keys, API tokens, and other secrets
+
+**Commit Standards:**
+- **Conventional Commits** - Enforces commit message format (e.g., `feat:`, `fix:`, `docs:`)
+
 ### How it works
-After installation, every `git commit` will automatically:
-- Check your code for errors and style violations
-- Auto-fix issues where possible
-- Format your code consistently
-- Block the commit if critical issues need manual fixing
+The hooks will:
+- Auto-fix issues where possible (formatting, trailing whitespace)
+- Block commits if security vulnerabilities or private keys are detected
+- Ensure commit messages follow conventional format
+- Provide clear feedback on what needs to be fixed manually
+
 ### Testing the setup (optional)
 To verify everything is working correctly, run the hooks manually on all files:
 ```bash
